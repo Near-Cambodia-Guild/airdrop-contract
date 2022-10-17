@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "license": "(MIT AND Apache-2.0)",
   "scripts": {
+    "airdrop": "tsc && node ./dist/index.js",
     "start": "cd frontend && npm run start",
     "deploy": "cd contract && ./deploy.sh",
     "build": "npm run build:contract && npm run build:web",
@@ -14,7 +15,12 @@
     "postinstall": "cd frontend && npm install && cd .. && cd integration-tests && npm install && cd .. && echo rs contract"
   },
   "devDependencies": {
-    "near-cli": "^3.3.0"
+    "@types/node": "^18.11.0",
+    "dotenv": "^16.0.3",
+    "near-cli": "^1.0.0"
   },
-  "dependencies": {}
+  "dependencies": {
+    "csv-parser": "^3.0.0",
+    "near-api-js": "^1.1.0"
+  }
 }
